@@ -2,3 +2,6 @@ syntax: regexp
 ^build
 ^config\.h$
 ^id3tag\.h$
+^packaging/id3tag\.pc$
+^packaging/id3tagConfig\.cmake$
+^packaging/id3tagConfigVersion\.cmake$
