@@ -17,7 +17,6 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * $Id: frametype.gperf,v 1.7 2004/01/23 09:41:32 rob Exp $
  */
 
 # include "global.h"
@@ -280,9 +279,12 @@ EQU2, FRAME(EQU2), DISCARD,  "Equalisation (2)"
 ETCO, FRAME(ETCO), DISCARD,  "Event timing codes"
 GEOB, FRAME(GEOB), PRESERVE, "General encapsulated object"
 GRID, FRAME(GRID), PRESERVE, "Group identification registration"
+GRP1, FRAME(text), PRESERVE, "Grouping"
 LINK, FRAME(LINK), PRESERVE, "Linked information"
 MCDI, FRAME(MCDI), PRESERVE, "Music CD identifier"
 MLLT, FRAME(MLLT), DISCARD,  "MPEG location lookup table"
+MVIN, FRAME(text), PRESERVE, "Movement Number/Movement Count"
+MVNM, FRAME(text), PRESERVE, "Movement Name"
 OWNE, FRAME(OWNE), PRESERVE, "Ownership frame"
 PCNT, FRAME(PCNT), PRESERVE, "Play counter"
 POPM, FRAME(POPM), PRESERVE, "Popularimeter"
@@ -310,7 +312,7 @@ TENC, FRAME(text), DISCARD,  "Encoded by"
 TEXT, FRAME(text), PRESERVE, "Lyricist/text writer"
 TFLT, FRAME(text), PRESERVE, "File type"
 TIPL, FRAME(text), PRESERVE, "Involved people list"
-TIT1, FRAME(text), PRESERVE, "Content group description"
+TIT1, FRAME(text), PRESERVE, "Work name"
 TIT2, FRAME(text), PRESERVE, "Title/songname/content description"
 TIT3, FRAME(text), PRESERVE, "Subtitle/description refinement"
 TKEY, FRAME(text), PRESERVE, "Initial key"

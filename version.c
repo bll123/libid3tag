@@ -16,13 +16,12 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * $Id: version.c,v 1.7 2004/01/23 09:41:32 rob Exp $
  */
 
+# include "config.h"
 # include "global.h"
 
 # include "id3tag.h"
-# include "version.h"
 
 char const id3_version[]   = "ID3 Tag Library " ID3_VERSION;
 char const id3_copyright[] = "Copyright (C) " ID3_PUBLISHYEAR " " ID3_AUTHOR;

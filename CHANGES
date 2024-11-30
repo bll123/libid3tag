@@ -2,9 +2,18 @@
  libid3tag - ID3 tag manipulation library
  Copyright (C) 2000-2004 Underbit Technologies, Inc.
 
- $Id: CHANGES,v 1.11 2004/02/17 02:04:10 rob Exp $
-
 ===============================================================================
+
+Version 0.16.4
+  * Support windows unicode filenames (Brad Lanam)
+  * Add MVNM (movement name) tag (Brad Lanam)
+  * Add MVIN (movement number/count) tag (Brad Lanam)
+  * Apply debian patch
+  * Apply a couple patches from Audio::Scan 0.62
+  * Update CMakeLists.txt to generate frametype.c, compat.c and genre.dat
+  * Update genre.dat.in with the full and corrected list of audio tags.
+  * Remove RCS ID tags.
+  * Remove extraneous files.
 
 Version 0.16.3
   * Fix backward compatibility with libid3tag 0.15.1b.

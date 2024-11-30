@@ -16,29 +16,28 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * $Id: file.c,v 1.21 2004/01/23 09:41:32 rob Exp $
  */
 
+# include "config.h"
 # include "global.h"
 
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 
-# ifdef HAVE_UNISTD_H
+# if HAVE_UNISTD_H
 #  include <unistd.h>
 # endif
 
-# ifdef HAVE_ASSERT_H
+# if HAVE_ASSERT_H
 #  include <assert.h>
 # endif
 
-# ifdef HAVE_SYS_STAT_H
-#  include <sys/stat.h>
+# if HAVE_WINDOWS_H
+#  include <windows.h>
 # endif
 
 # include "id3tag.h"
-# include "file.h"
 # include "tag.h"
 # include "field.h"
 
@@ -64,6 +63,11 @@ struct id3_file {
 enum {
   ID3_FILE_FLAG_ID3V1 = 0x0001
 };
+
+static FILE * id3_fopen (const char *fname, const char *mode);
+#if HAVE_WINDOWS_H
+static void * osToWideChar (const char *buff);
+#endif
 
 /*
  * NAME:	query_tag()
@@ -432,7 +436,7 @@ struct id3_file *id3_file_open(char const *path, enum id3_file_mode mode)
 
   assert(path);
 
-  iofile = fopen(path, (mode == ID3_FILE_MODE_READWRITE) ? "r+b" : "rb");
+  iofile = id3_fopen(path, (mode == ID3_FILE_MODE_READWRITE) ? "r+b" : "rb");
   if (iofile == 0)
     return 0;
 
@@ -541,7 +545,7 @@ int v1_write(struct id3_file *file,
       file->flags |= ID3_FILE_FLAG_ID3V1;
     }
   }
-# if defined(HAVE_FTRUNCATE)
+# if defined(HAVE_LIB_FTRUNCATE)
   else if (file->flags & ID3_FILE_FLAG_ID3V1) {
     long length;
 
@@ -575,32 +579,35 @@ static
 int v2_write(struct id3_file *file,
 	     id3_byte_t const *data, id3_length_t length)
 {
-  struct stat st;
   char *buffer;
-  id3_length_t datalen, offset;
+  id3_length_t datalen, offset, fsize;
 
-  assert(!data || length > 0);
+  /* assert removed, ok to write with no tags */
+  /* check for data not null removed, ok to write with no tags */
 
-  if (data &&
-      ((file->ntags == 1 && !(file->flags & ID3_FILE_FLAG_ID3V1)) ||
+  if (((file->ntags == 1 && !(file->flags & ID3_FILE_FLAG_ID3V1)) ||
        (file->ntags == 2 &&  (file->flags & ID3_FILE_FLAG_ID3V1))) &&
-      file->tags[0].length == length) {
+      (file->tags[0].length == length || length == 0)) {
     /* easy special case: rewrite existing tag in-place */
 
-    if (fseek(file->iofile, file->tags[0].location, SEEK_SET) == -1 ||
+    if (length > 0 &&
+        fseek(file->iofile, file->tags[0].location, SEEK_SET) == -1 ||
 	fwrite(data, length, 1, file->iofile) != 1 ||
-	fflush(file->iofile) == EOF)
+	fflush(file->iofile) == EOF) {
       return -1;
+    }
 
     goto done;
   }
 
   /* hard general case: rewrite entire file */
-  if (stat(file->path, &st) == -1)
+  if (fseek(file->iofile, 0, SEEK_END) == -1) {
     return -1;
+  }
+  fsize = ftell (file->iofile);
 
   offset = file->tags ? file->tags[0].length : 0;
-  datalen = st.st_size - offset;
+  datalen = fsize - offset;
   if ((buffer = (char *) malloc(datalen)) == NULL)
     return -1;
 
@@ -658,14 +665,18 @@ int id3_file_update(struct id3_file *file)
   v2size = id3_tag_render(file->primary, 0);
   if (v2size) {
     id3v2 = malloc(v2size);
-    if (id3v2 == 0)
+    if (id3v2 == 0) {
       goto fail;
+    }
 
     v2size = id3_tag_render(file->primary, id3v2);
     if (v2size == 0) {
       free(id3v2);
       id3v2 = 0;
     }
+  } else {
+    /* if there are no tags, render the information, need the new header */
+    v2size = id3_tag_render(file->primary, id3v2);
   }
 
   /* write tags */
@@ -692,3 +703,43 @@ int id3_file_update(struct id3_file *file)
 
   return result;
 }
+
+static FILE *
+id3_fopen (const char *fname, const char *mode)
+{
+  FILE          *fh;
+
+#if HAVE_LIB__WFOPEN
+  {
+    wchar_t       *tfname = NULL;
+    wchar_t       *tmode = NULL;
+
+    tfname = osToWideChar (fname);
+    tmode = osToWideChar (mode);
+    fh = _wfopen (tfname, tmode);
+    free (tfname);
+    free (tmode);
+  }
+#else
+  {
+    fh = fopen (fname, mode);
+  }
+#endif
+  return fh;
+}
+
+#if HAVE_WINDOWS_H
+static void *
+osToWideChar (const char *buff)
+{
+  wchar_t     *tbuff = NULL;
+  size_t      len;
+
+  /* the documentation lies; len does not include room for the null byte */
+  len = MultiByteToWideChar (CP_UTF8, 0, buff, strlen (buff), NULL, 0);
+  tbuff = malloc ((len + 1) * sizeof (wchar_t));
+  MultiByteToWideChar (CP_UTF8, 0, buff, strlen (buff), tbuff, len);
+  tbuff [len] = L'\0';
+  return tbuff;
+}
+#endif

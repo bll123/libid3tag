@@ -16,9 +16,9 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * $Id: utf16.c,v 1.9 2004/01/23 09:41:32 rob Exp $
  */
 
+# include "config.h"
 # include "global.h"
 
 # include <stdlib.h>
@@ -268,6 +268,13 @@ id3_ucs4_t *id3_utf16_deserialize(id3_byte_t const **ptr, id3_length_t length,
     }
   }
 
+
+  /* Bug 14728 */
+  /*  If there is no BOM, assume LE, this is what appears in the wild -andy */
+  if (byteorder == ID3_UTF16_BYTEORDER_ANY) {
+    byteorder = ID3_UTF16_BYTEORDER_LE;
+  }
+
   utf16ptr = utf16;
   while (end - *ptr > 0 && (*utf16ptr = id3_utf16_get(ptr, byteorder)))
     ++utf16ptr;
@@ -290,6 +297,19 @@ id3_ucs4_t *id3_utf16_deserialize(id3_byte_t const **ptr, id3_length_t length,
       *     already tried to parse everything we can.
       *   - tell that we parsed it, which is what we do here.
       */
+     (*ptr)++;
+  }
+
+  if (end == *ptr && length % 2 != 0)
+  {
+    /* We were called with a bogus length.  It should always
+     * be an even number.  We can deal with this in a few ways:
+     * - Always give an error.
+     * - Try and parse as much as we can and
+     *   - return an error if we're called again when we
+     *     already tried to parse everything we can.
+     *   - tell that we parsed it, which is what we do here.
+     */
      (*ptr)++;
   }
 

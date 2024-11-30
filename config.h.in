@@ -1,0 +1,10 @@
+#ifndef INC_ID3_CONFIG_H
+#define INC_ID3_CONFIG_H
+
+#cmakedefine01 HAVE_WINDOWS_H
+#cmakedefine01 HAVE_LIB__WFOPEN
+#cmakedefine01 HAVE_UNISTD_H
+#cmakedefine01 HAVE_ASSERT_H
+#cmakedefine01 HAVE_LIB_FTRUNCATE
+
+#endif /* INC_ID3_CONFIG_H */

@@ -1,5 +1,5 @@
-/* C code produced by gperf version 3.0.1 */
-/* Command-line: gperf -tCcTonD -K id -N id3_compat_lookup -s -3 -k '*' compat.gperf  */
+/* ANSI-C code produced by gperf version 3.1 */
+/* Command-line: /usr/bin/gperf -tCcTonD -K id -N id3_compat_lookup -s -3 -k '*' --output-file=/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.c /home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf  */
 
 #if !((' ' == 32) && ('!' == 33) && ('"' == 34) && ('#' == 35) \
       && ('%' == 37) && ('&' == 38) && ('\'' == 39) && ('(' == 40) \
@@ -25,10 +25,10 @@
       && ('w' == 119) && ('x' == 120) && ('y' == 121) && ('z' == 122) \
       && ('{' == 123) && ('|' == 124) && ('}' == 125) && ('~' == 126))
 /* The character set is not based on ISO-646.  */
-error "gperf generated tables don't work with this execution character set. Please report a bug to <bug-gnu-gperf@gnu.org>."
+#error "gperf generated tables don't work with this execution character set. Please report a bug to <bug-gperf@gnu.org>."
 #endif
 
-#line 1 "compat.gperf"
+#line 1 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
 
 /*
  * libid3tag - ID3 tag manipulation library
@@ -48,7 +48,6 @@ error "gperf generated tables don't work with this execution character set. Plea
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * Id: compat.gperf,v 1.11 2004/01/23 09:41:32 rob Exp 
  */
 
 # include "global.h"
@@ -88,7 +87,7 @@ inline
 #endif
 #endif
 static unsigned int
-hash (register const char* str, register unsigned int len)
+hash (register const char *str, register size_t len)
 {
   static const unsigned char asso_values[] =
     {
@@ -119,7 +118,7 @@ hash (register const char* str, register unsigned int len)
       128, 128, 128, 128, 128, 128, 128, 128, 128, 128,
       128, 128, 128, 128, 128, 128, 128
     };
-  register int hval = 0;
+  register unsigned int hval = 0;
 
   switch (len)
     {
@@ -139,163 +138,160 @@ hash (register const char* str, register unsigned int len)
   return hval;
 }
 
-#ifdef __GNUC__
-__inline
-#endif
 const struct id3_compat *
-id3_compat_lookup(register const char *str, register size_t len)
+id3_compat_lookup (register const char *str, register size_t len)
 {
   static const struct id3_compat wordlist[] =
     {
-#line 97 "compat.gperf"
+#line 92 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TLE",  EQ(TLEN)  /* Length */},
-#line 68 "compat.gperf"
+#line 63 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"ETC",  EQ(ETCO)  /* Event timing codes */},
-#line 126 "compat.gperf"
+#line 121 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"ULT",  EQ(USLT)  /* Unsynchronised lyric/text transcription */},
-#line 123 "compat.gperf"
+#line 118 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TYE",  OBSOLETE  /* Year [obsolete] */},
-#line 92 "compat.gperf"
+#line 87 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TFT",  EQ(TFLT)  /* File type */},
-#line 84 "compat.gperf"
+#line 79 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TCM",  EQ(TCOM)  /* Composer */},
-#line 66 "compat.gperf"
+#line 61 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"EQU",  OBSOLETE  /* Equalization [obsolete] */},
-#line 63 "compat.gperf"
+#line 58 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"COM",  EQ(COMM)  /* Comments */},
-#line 130 "compat.gperf"
+#line 125 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"WCM",  EQ(WCOM)  /* Commercial information */},
-#line 96 "compat.gperf"
+#line 91 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TLA",  EQ(TLAN)  /* Language(s) */},
-#line 88 "compat.gperf"
+#line 83 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TDA",  OBSOLETE  /* Date [obsolete] */},
-#line 124 "compat.gperf"
+#line 119 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TYER", OBSOLETE  /* Year [obsolete] */},
-#line 83 "compat.gperf"
+#line 78 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TBP",  EQ(TBPM)  /* BPM (beats per minute) */},
-#line 87 "compat.gperf"
+#line 82 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TCR",  EQ(TCOP)  /* Copyright message */},
-#line 104 "compat.gperf"
+#line 99 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TOT",  EQ(TOAL)  /* Original album/movie/show title */},
-#line 89 "compat.gperf"
+#line 84 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TDAT", OBSOLETE  /* Date [obsolete] */},
-#line 67 "compat.gperf"
+#line 62 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"EQUA", OBSOLETE  /* Equalization [obsolete] */},
-#line 102 "compat.gperf"
+#line 97 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TOR",  EQ(TDOR)  /* Original release year [obsolete] */},
-#line 131 "compat.gperf"
+#line 126 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"WCP",  EQ(WCOP)  /* Copyright/legal information */},
-#line 99 "compat.gperf"
+#line 94 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TOA",  EQ(TOPE)  /* Original artist(s)/performer(s) */},
-#line 78 "compat.gperf"
+#line 73 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"RVA",  OBSOLETE  /* Relative volume adjustment [obsolete] */},
-#line 120 "compat.gperf"
+#line 115 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TT3",  EQ(TIT3)  /* Subtitle/description refinement */},
-#line 98 "compat.gperf"
+#line 93 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TMT",  EQ(TMED)  /* Media type */},
-#line 76 "compat.gperf"
+#line 71 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"POP",  EQ(POPM)  /* Popularimeter */},
-#line 74 "compat.gperf"
+#line 69 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"MLL",  EQ(MLLT)  /* MPEG location lookup table */},
-#line 79 "compat.gperf"
+#line 74 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"RVAD", OBSOLETE  /* Relative volume adjustment [obsolete] */},
-#line 65 "compat.gperf"
+#line 60 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"CRM",  OBSOLETE  /* Encrypted meta frame [obsolete] */},
-#line 128 "compat.gperf"
+#line 123 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"WAR",  EQ(WOAR)  /* Official artist/performer webpage */},
-#line 80 "compat.gperf"
+#line 75 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"SLT",  EQ(SYLT)  /* Synchronised lyric/text */},
-#line 81 "compat.gperf"
+#line 76 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"STC",  EQ(SYTC)  /* Synchronised tempo codes */},
-#line 95 "compat.gperf"
+#line 90 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TKE",  EQ(TKEY)  /* Initial key */},
-#line 111 "compat.gperf"
+#line 106 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TRC",  EQ(TSRC)  /* ISRC (international standard recording code) */},
-#line 109 "compat.gperf"
+#line 104 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TPA",  EQ(TPOS)  /* Part of a set */},
-#line 117 "compat.gperf"
+#line 112 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TSS",  EQ(TSSE)  /* Software/hardware and settings used for encoding */},
-#line 112 "compat.gperf"
+#line 107 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TRD",  OBSOLETE  /* Recording dates [obsolete] */},
-#line 64 "compat.gperf"
+#line 59 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"CRA",  EQ(AENC)  /* Audio encryption */},
-#line 108 "compat.gperf"
+#line 103 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TP4",  EQ(TPE4)  /* Interpreted, remixed, or otherwise modified by */},
-#line 125 "compat.gperf"
+#line 120 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"UFI",  EQ(UFID)  /* Unique file identifier */},
-#line 101 "compat.gperf"
+#line 96 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TOL",  EQ(TOLY)  /* Original lyricist(s)/text writer(s) */},
-#line 110 "compat.gperf"
+#line 105 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TPB",  EQ(TPUB)  /* Publisher */},
-#line 73 "compat.gperf"
+#line 68 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"MCI",  EQ(MCDI)  /* Music CD identifier */},
-#line 107 "compat.gperf"
+#line 102 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TP3",  EQ(TPE3)  /* Conductor/performer refinement */},
-#line 132 "compat.gperf"
+#line 127 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"WPB",  EQ(WPUB)  /* Publishers official webpage */},
-#line 113 "compat.gperf"
+#line 108 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TRDA", OBSOLETE  /* Recording dates [obsolete] */},
-#line 115 "compat.gperf"
+#line 110 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TSI",  OBSOLETE  /* Size [obsolete] */},
-#line 90 "compat.gperf"
+#line 85 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TDY",  EQ(TDLY)  /* Playlist delay */},
-#line 82 "compat.gperf"
+#line 77 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TAL",  EQ(TALB)  /* Album/movie/show title */},
-#line 116 "compat.gperf"
+#line 111 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TSIZ", OBSOLETE  /* Size [obsolete] */},
-#line 129 "compat.gperf"
+#line 124 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"WAS",  EQ(WOAS)  /* Official audio source webpage */},
-#line 121 "compat.gperf"
+#line 116 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TXT",  EQ(TEXT)  /* Lyricist/text writer */},
-#line 62 "compat.gperf"
+#line 57 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"CNT",  EQ(PCNT)  /* Play counter */},
-#line 100 "compat.gperf"
+#line 95 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TOF",  EQ(TOFN)  /* Original filename */},
-#line 85 "compat.gperf"
+#line 80 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TCO",  TX(TCON)  /* Content type */},
-#line 114 "compat.gperf"
+#line 109 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TRK",  EQ(TRCK)  /* Track number/position in set */},
-#line 119 "compat.gperf"
+#line 114 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TT2",  EQ(TIT2)  /* Title/songname/content description */},
-#line 93 "compat.gperf"
+#line 88 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TIM",  OBSOLETE  /* Time [obsolete] */},
-#line 94 "compat.gperf"
+#line 89 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TIME", OBSOLETE  /* Time [obsolete] */},
-#line 103 "compat.gperf"
+#line 98 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TORY", EQ(TDOR)  /* Original release year [obsolete] */},
-#line 91 "compat.gperf"
+#line 86 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TEN",  EQ(TENC)  /* Encoded by */},
-#line 118 "compat.gperf"
+#line 113 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TT1",  EQ(TIT1)  /* Content group description */},
-#line 127 "compat.gperf"
+#line 122 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"WAF",  EQ(WOAF)  /* Official audio file webpage */},
-#line 75 "compat.gperf"
+#line 70 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"PIC",  EQ(APIC)  /* Attached picture */},
-#line 122 "compat.gperf"
+#line 117 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TXX",  EQ(TXXX)  /* User defined text information frame */},
-#line 133 "compat.gperf"
+#line 128 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"WXX",  EQ(WXXX)  /* User defined URL link frame */},
-#line 86 "compat.gperf"
+#line 81 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TCON", TX(TCON)  /* Content type */},
-#line 77 "compat.gperf"
+#line 72 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"REV",  EQ(RVRB)  /* Reverb */},
-#line 106 "compat.gperf"
+#line 101 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TP2",  EQ(TPE2)  /* Band/orchestra/accompaniment */},
-#line 105 "compat.gperf"
+#line 100 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"TP1",  EQ(TPE1)  /* Lead performer(s)/soloist(s) */},
-#line 61 "compat.gperf"
+#line 56 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"BUF",  EQ(RBUF)  /* Recommended buffer size */},
-#line 70 "compat.gperf"
+#line 65 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"IPL",  EQ(TIPL)  /* Involved people list */},
-#line 69 "compat.gperf"
+#line 64 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"GEO",  EQ(GEOB)  /* General encapsulated object */},
-#line 72 "compat.gperf"
+#line 67 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"LNK",  EQ(LINK)  /* Linked information */},
-#line 71 "compat.gperf"
+#line 66 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
       {"IPLS", EQ(TIPL)  /* Involved people list */}
     };
 
-  static const short lookup[] =
+  static const signed char lookup[] =
     {
       -1, -1, -1, -1, -1, -1,  0,  1,  2,  3,  4,  5,  6,  7,
        8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, -1,
@@ -311,9 +307,9 @@ id3_compat_lookup(register const char *str, register size_t len)
 
   if (len <= MAX_WORD_LENGTH && len >= MIN_WORD_LENGTH)
     {
-      register int key = hash (str, len);
+      register unsigned int key = hash (str, len);
 
-      if (key <= MAX_HASH_VALUE && key >= 0)
+      if (key <= MAX_HASH_VALUE)
         {
           register int index = lookup[key];
 
@@ -328,7 +324,7 @@ id3_compat_lookup(register const char *str, register size_t len)
     }
   return 0;
 }
-#line 134 "compat.gperf"
+#line 129 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/compat.gperf"
 
 
 static
@@ -434,9 +430,10 @@ int id3_compat_fixup(struct id3_tag *tag)
 
     encoding = id3_parse_uint(&data, 1);
     string   = id3_parse_string(&data, end - data, encoding, 0);
-
-	if (!string)
-		continue;
+    if (!string)
+    {
+	continue;
+    }
 
     if (id3_ucs4_length(string) < 4) {
       free(string);

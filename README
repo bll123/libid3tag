@@ -2,8 +2,6 @@
  libid3tag - ID3 tag manipulation library
  Copyright (C) 2000-2004 Underbit Technologies, Inc.
 
- $Id: README,v 1.5 2004/01/23 09:41:32 rob Exp $
-
 ===============================================================================
 
 INTRODUCTION
@@ -33,7 +31,7 @@ COPYRIGHT
 
   Send inquiries, comments, bug reports, suggestions, patches, etc. to:
 
-      https://codeberg.org/tenacityteam/libid3tag
+      Underbit Technologies, Inc. <support@underbit.com>
 
   See also Tenacity's homepage on the Web:
 

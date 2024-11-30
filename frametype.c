@@ -1,5 +1,5 @@
-/* C code produced by gperf version 3.0.1 */
-/* Command-line: gperf -tCcTonD -K id -N id3_frametype_lookup -s -3 -k '*' frametype.gperf  */
+/* ANSI-C code produced by gperf version 3.1 */
+/* Command-line: /usr/bin/gperf -tCcTonD -K id -N id3_frametype_lookup -s -3 -k '*' --output-file=/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.c /home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf  */
 
 #if !((' ' == 32) && ('!' == 33) && ('"' == 34) && ('#' == 35) \
       && ('%' == 37) && ('&' == 38) && ('\'' == 39) && ('(' == 40) \
@@ -25,10 +25,10 @@
       && ('w' == 119) && ('x' == 120) && ('y' == 121) && ('z' == 122) \
       && ('{' == 123) && ('|' == 124) && ('}' == 125) && ('~' == 126))
 /* The character set is not based on ISO-646.  */
-error "gperf generated tables don't work with this execution character set. Please report a bug to <bug-gnu-gperf@gnu.org>."
+#error "gperf generated tables don't work with this execution character set. Please report a bug to <bug-gperf@gnu.org>."
 #endif
 
-#line 1 "frametype.gperf"
+#line 1 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
 
 /*
  * libid3tag - ID3 tag manipulation library
@@ -48,7 +48,6 @@ error "gperf generated tables don't work with this execution character set. Plea
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * Id: frametype.gperf,v 1.7 2004/01/23 09:41:32 rob Exp 
  */
 
 # include "global.h"
@@ -296,12 +295,12 @@ FRAMETYPE(experimental, unknown, PRESERVE, "Experimental frame");
 FRAMETYPE(unknown,      unknown, PRESERVE, "Unknown frame");
 FRAMETYPE(obsolete,     unknown, OBSOLETE, "Obsolete frame");
 
-#define TOTAL_KEYWORDS 84
+#define TOTAL_KEYWORDS 87
 #define MIN_WORD_LENGTH 4
 #define MAX_WORD_LENGTH 4
 #define MIN_HASH_VALUE 7
-#define MAX_HASH_VALUE 155
-/* maximum key range = 149, duplicates = 0 */
+#define MAX_HASH_VALUE 177
+/* maximum key range = 171, duplicates = 0 */
 
 #ifdef __GNUC__
 __inline
@@ -311,239 +310,243 @@ inline
 #endif
 #endif
 static unsigned int
-hash(register const char *str, register unsigned int len)
+hash (register const char *str, register size_t len)
 {
   static const unsigned char asso_values[] =
     {
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-       43,   4,  47,  49, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156,  31,  53,   3,  15,   3,
-       24,  25,  10,  52,  69,  34,  23,  30,   1,   5,
-       10,  62,  20,   0,  28,  28,  22,  19,  47,   3,
-       10, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156, 156, 156, 156,
-      156, 156, 156, 156, 156, 156, 156
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+       69,  43,  13,  24, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178,  31,  53,   3,  15,   3,
+       24,  25,  10,  52,  74,   4,  23,  30,   1,   5,
+       10,  62,  20,   0,  28,  28,   3,  19,  29,  62,
+       10, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178, 178, 178, 178,
+      178, 178, 178, 178, 178, 178, 178
     };
   return asso_values[(unsigned char)str[3]+1] + asso_values[(unsigned char)str[2]] + asso_values[(unsigned char)str[1]] + asso_values[(unsigned char)str[0]];
 }
 
-#ifdef __GNUC__
-__inline
-#endif
 const struct id3_frametype *
-id3_frametype_lookup(register const char *str, register size_t len)
+id3_frametype_lookup (register const char *str, register size_t len)
 {
   static const struct id3_frametype wordlist[] =
     {
-#line 282 "frametype.gperf"
+#line 277 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"ENCR", FRAME(ENCR), PRESERVE, "Encryption method registration"},
-#line 292 "frametype.gperf"
+#line 290 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"POPM", FRAME(POPM), PRESERVE, "Popularimeter"},
-#line 351 "frametype.gperf"
+#line 349 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"WCOM", FRAME(url),  PRESERVE, "Commercial information"},
-#line 298 "frametype.gperf"
+#line 296 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"SEEK", FRAME(SEEK), DISCARD,  "Seek frame"},
-#line 349 "frametype.gperf"
+#line 347 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"USER", FRAME(USER), PRESERVE, "Terms of use"},
-#line 285 "frametype.gperf"
+#line 287 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"MVNM", FRAME(text), PRESERVE, "Movement Name"},
+#line 280 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"GEOB", FRAME(GEOB), PRESERVE, "General encapsulated object"},
-#line 304 "frametype.gperf"
+#line 302 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"TCOM", FRAME(text), PRESERVE, "Composer"},
-#line 281 "frametype.gperf"
+#line 276 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"COMR", FRAME(COMR), PRESERVE, "Commercial frame"},
-#line 280 "frametype.gperf"
+#line 275 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"COMM", FRAME(COMM), PRESERVE, "Comments"},
-#line 305 "frametype.gperf"
+#line 303 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"TCON", FRAME(text), PRESERVE, "Content type"},
-#line 291 "frametype.gperf"
+#line 289 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"PCNT", FRAME(PCNT), PRESERVE, "Play counter"},
-#line 293 "frametype.gperf"
+#line 291 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"POSS", FRAME(POSS), DISCARD,  "Position synchronisation frame"},
-#line 284 "frametype.gperf"
+#line 279 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"ETCO", FRAME(ETCO), DISCARD,  "Event timing codes"},
-#line 332 "frametype.gperf"
-      {"TPE2", FRAME(text), PRESERVE, "Band/orchestra/accompaniment"},
-#line 301 "frametype.gperf"
-      {"SYTC", FRAME(SYTC), DISCARD,  "Synchronised tempo codes"},
-#line 313 "frametype.gperf"
-      {"TENC", FRAME(text), DISCARD,  "Encoded by"},
-#line 309 "frametype.gperf"
-      {"TDOR", FRAME(text), PRESERVE, "Original release time"},
-#line 290 "frametype.gperf"
-      {"OWNE", FRAME(OWNE), PRESERVE, "Ownership frame"},
-#line 277 "frametype.gperf"
-      {"AENC", FRAME(AENC), DISCARD,  "Audio encryption"},
-#line 307 "frametype.gperf"
-      {"TDEN", FRAME(text), PRESERVE, "Encoding time"},
-#line 345 "frametype.gperf"
-      {"TSSE", FRAME(text), PRESERVE, "Software/hardware and settings used for encoding"},
-#line 339 "frametype.gperf"
-      {"TRSN", FRAME(text), PRESERVE, "Internet radio station name"},
-#line 300 "frametype.gperf"
-      {"SYLT", FRAME(SYLT), DISCARD,  "Synchronised lyric/text"},
-#line 354 "frametype.gperf"
-      {"WOAR", FRAME(url),  PRESERVE, "Official artist/performer webpage"},
-#line 346 "frametype.gperf"
-      {"TSST", FRAME(text), PRESERVE, "Set subtitle"},
-#line 330 "frametype.gperf"
-      {"TOWN", FRAME(text), PRESERVE, "File owner/licensee"},
-#line 340 "frametype.gperf"
-      {"TRSO", FRAME(text), PRESERVE, "Internet radio station owner"},
-#line 322 "frametype.gperf"
-      {"TLEN", FRAME(text), DISCARD,  "Length"},
-#line 358 "frametype.gperf"
-      {"WPUB", FRAME(url),  PRESERVE, "Publishers official webpage"},
-#line 343 "frametype.gperf"
-      {"TSOT", FRAME(text), PRESERVE, "Title sort order"},
-#line 327 "frametype.gperf"
-      {"TOFN", FRAME(text), PRESERVE, "Original filename"},
-#line 344 "frametype.gperf"
-      {"TSRC", FRAME(text), PRESERVE, "ISRC (international standard recording code)"},
-#line 324 "frametype.gperf"
-      {"TMED", FRAME(text), PRESERVE, "Media type"},
-#line 297 "frametype.gperf"
-      {"RVRB", FRAME(RVRB), PRESERVE, "Reverb"},
-#line 328 "frametype.gperf"
-      {"TOLY", FRAME(text), PRESERVE, "Original lyricist(s)/text writer(s)"},
-#line 329 "frametype.gperf"
-      {"TOPE", FRAME(text), PRESERVE, "Original artist(s)/performer(s)"},
-#line 336 "frametype.gperf"
-      {"TPRO", FRAME(text), PRESERVE, "Produced notice"},
-#line 337 "frametype.gperf"
-      {"TPUB", FRAME(text), PRESERVE, "Publisher"},
-#line 357 "frametype.gperf"
-      {"WPAY", FRAME(url),  PRESERVE, "Payment"},
-#line 335 "frametype.gperf"
-      {"TPOS", FRAME(text), PRESERVE, "Part of a set"},
-#line 356 "frametype.gperf"
-      {"WORS", FRAME(url),  PRESERVE, "Official Internet radio station homepage"},
-#line 325 "frametype.gperf"
-      {"TMOO", FRAME(text), PRESERVE, "Mood"},
-#line 338 "frametype.gperf"
-      {"TRCK", FRAME(text), PRESERVE, "Track number/position in set"},
-#line 320 "frametype.gperf"
+#line 318 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"TKEY", FRAME(text), PRESERVE, "Initial key"},
-#line 308 "frametype.gperf"
-      {"TDLY", FRAME(text), PRESERVE, "Playlist delay"},
-#line 296 "frametype.gperf"
-      {"RVA2", FRAME(RVA2), DISCARD,  "Relative volume adjustment (2)"},
-#line 310 "frametype.gperf"
-      {"TDRC", FRAME(text), PRESERVE, "Recording time"},
-#line 350 "frametype.gperf"
-      {"USLT", FRAME(USLT), PRESERVE, "Unsynchronised lyric/text transcription"},
-#line 353 "frametype.gperf"
-      {"WOAF", FRAME(url),  PRESERVE, "Official audio file webpage"},
-#line 312 "frametype.gperf"
-      {"TDTG", FRAME(text), PRESERVE, "Tagging time"},
-#line 299 "frametype.gperf"
-      {"SIGN", FRAME(SIGN), PRESERVE, "Signature frame"},
-#line 355 "frametype.gperf"
-      {"WOAS", FRAME(url),  PRESERVE, "Official audio source webpage"},
-#line 331 "frametype.gperf"
-      {"TPE1", FRAME(text), PRESERVE, "Lead performer(s)/soloist(s)"},
-#line 302 "frametype.gperf"
-      {"TALB", FRAME(text), PRESERVE, "Album/movie/show title"},
-#line 341 "frametype.gperf"
-      {"TSOA", FRAME(text), PRESERVE, "Album sort order"},
-#line 321 "frametype.gperf"
-      {"TLAN", FRAME(text), PRESERVE, "Language(s)"},
-#line 333 "frametype.gperf"
+#line 295 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"RVRB", FRAME(RVRB), PRESERVE, "Reverb"},
+#line 311 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TENC", FRAME(text), DISCARD,  "Encoded by"},
+#line 307 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TDOR", FRAME(text), PRESERVE, "Original release time"},
+#line 288 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"OWNE", FRAME(OWNE), PRESERVE, "Ownership frame"},
+#line 272 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"AENC", FRAME(AENC), DISCARD,  "Audio encryption"},
+#line 305 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TDEN", FRAME(text), PRESERVE, "Encoding time"},
+#line 343 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TSSE", FRAME(text), PRESERVE, "Software/hardware and settings used for encoding"},
+#line 337 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TRSN", FRAME(text), PRESERVE, "Internet radio station name"},
+#line 331 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"TPE3", FRAME(text), PRESERVE, "Conductor/performer refinement"},
-#line 352 "frametype.gperf"
-      {"WCOP", FRAME(url),  PRESERVE, "Copyright/legal information"},
-#line 334 "frametype.gperf"
+#line 352 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"WOAR", FRAME(url),  PRESERVE, "Official artist/performer webpage"},
+#line 344 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TSST", FRAME(text), PRESERVE, "Set subtitle"},
+#line 328 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TOWN", FRAME(text), PRESERVE, "File owner/licensee"},
+#line 338 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TRSO", FRAME(text), PRESERVE, "Internet radio station owner"},
+#line 320 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TLEN", FRAME(text), DISCARD,  "Length"},
+#line 356 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"WPUB", FRAME(url),  PRESERVE, "Publishers official webpage"},
+#line 341 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TSOT", FRAME(text), PRESERVE, "Title sort order"},
+#line 325 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TOFN", FRAME(text), PRESERVE, "Original filename"},
+#line 342 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TSRC", FRAME(text), PRESERVE, "ISRC (international standard recording code)"},
+#line 322 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TMED", FRAME(text), PRESERVE, "Media type"},
+#line 332 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"TPE4", FRAME(text), PRESERVE, "Interpreted, remixed, or otherwise modified by"},
-#line 323 "frametype.gperf"
-      {"TMCL", FRAME(text), PRESERVE, "Musician credits list"},
-#line 303 "frametype.gperf"
-      {"TBPM", FRAME(text), PRESERVE, "BPM (beats per minute)"},
-#line 311 "frametype.gperf"
-      {"TDRL", FRAME(text), PRESERVE, "Release time"},
-#line 326 "frametype.gperf"
-      {"TOAL", FRAME(text), PRESERVE, "Original album/movie/show title"},
-#line 342 "frametype.gperf"
-      {"TSOP", FRAME(text), PRESERVE, "Performer sort order"},
-#line 363 "frametype.gperf"
-      {"ZOBS", FRAME(ZOBS), OBSOLETE, "Obsolete frame"},
-#line 283 "frametype.gperf"
-      {"EQU2", FRAME(EQU2), DISCARD,  "Equalisation (2)"},
-#line 306 "frametype.gperf"
-      {"TCOP", FRAME(text), PRESERVE, "Copyright message"},
-#line 287 "frametype.gperf"
-      {"LINK", FRAME(LINK), PRESERVE, "Linked information"},
-#line 286 "frametype.gperf"
-      {"GRID", FRAME(GRID), PRESERVE, "Group identification registration"},
-#line 294 "frametype.gperf"
-      {"PRIV", FRAME(PRIV), PRESERVE, "Private frame"},
-#line 315 "frametype.gperf"
-      {"TFLT", FRAME(text), PRESERVE, "File type"},
-#line 289 "frametype.gperf"
-      {"MLLT", FRAME(MLLT), DISCARD,  "MPEG location lookup table"},
-#line 314 "frametype.gperf"
+#line 326 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TOLY", FRAME(text), PRESERVE, "Original lyricist(s)/text writer(s)"},
+#line 327 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TOPE", FRAME(text), PRESERVE, "Original artist(s)/performer(s)"},
+#line 334 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TPRO", FRAME(text), PRESERVE, "Produced notice"},
+#line 335 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TPUB", FRAME(text), PRESERVE, "Publisher"},
+#line 355 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"WPAY", FRAME(url),  PRESERVE, "Payment"},
+#line 333 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TPOS", FRAME(text), PRESERVE, "Part of a set"},
+#line 354 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"WORS", FRAME(url),  PRESERVE, "Official Internet radio station homepage"},
+#line 323 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TMOO", FRAME(text), PRESERVE, "Mood"},
+#line 336 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TRCK", FRAME(text), PRESERVE, "Track number/position in set"},
+#line 306 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TDLY", FRAME(text), PRESERVE, "Playlist delay"},
+#line 308 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TDRC", FRAME(text), PRESERVE, "Recording time"},
+#line 348 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"USLT", FRAME(USLT), PRESERVE, "Unsynchronised lyric/text transcription"},
+#line 351 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"WOAF", FRAME(url),  PRESERVE, "Official audio file webpage"},
+#line 310 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TDTG", FRAME(text), PRESERVE, "Tagging time"},
+#line 297 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"SIGN", FRAME(SIGN), PRESERVE, "Signature frame"},
+#line 353 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"WOAS", FRAME(url),  PRESERVE, "Official audio source webpage"},
+#line 330 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TPE2", FRAME(text), PRESERVE, "Band/orchestra/accompaniment"},
+#line 300 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TALB", FRAME(text), PRESERVE, "Album/movie/show title"},
+#line 339 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TSOA", FRAME(text), PRESERVE, "Album sort order"},
+#line 319 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TLAN", FRAME(text), PRESERVE, "Language(s)"},
+#line 312 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"TEXT", FRAME(text), PRESERVE, "Lyricist/text writer"},
-#line 348 "frametype.gperf"
+#line 350 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"WCOP", FRAME(url),  PRESERVE, "Copyright/legal information"},
+#line 286 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"MVIN", FRAME(text), PRESERVE, "Movement Number/Movement Count"},
+#line 321 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TMCL", FRAME(text), PRESERVE, "Musician credits list"},
+#line 301 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TBPM", FRAME(text), PRESERVE, "BPM (beats per minute)"},
+#line 309 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TDRL", FRAME(text), PRESERVE, "Release time"},
+#line 324 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TOAL", FRAME(text), PRESERVE, "Original album/movie/show title"},
+#line 340 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TSOP", FRAME(text), PRESERVE, "Performer sort order"},
+#line 361 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"ZOBS", FRAME(ZOBS), OBSOLETE, "Obsolete frame"},
+#line 294 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"RVA2", FRAME(RVA2), DISCARD,  "Relative volume adjustment (2)"},
+#line 304 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TCOP", FRAME(text), PRESERVE, "Copyright message"},
+#line 283 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"LINK", FRAME(LINK), PRESERVE, "Linked information"},
+#line 281 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"GRID", FRAME(GRID), PRESERVE, "Group identification registration"},
+#line 292 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"PRIV", FRAME(PRIV), PRESERVE, "Private frame"},
+#line 313 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TFLT", FRAME(text), PRESERVE, "File type"},
+#line 285 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"MLLT", FRAME(MLLT), DISCARD,  "MPEG location lookup table"},
+#line 299 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"SYTC", FRAME(SYTC), DISCARD,  "Synchronised tempo codes"},
+#line 346 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"UFID", FRAME(UFID), PRESERVE, "Unique file identifier"},
-#line 278 "frametype.gperf"
+#line 273 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"APIC", FRAME(APIC), PRESERVE, "Attached picture"},
-#line 279 "frametype.gperf"
+#line 329 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TPE1", FRAME(text), PRESERVE, "Lead performer(s)/soloist(s)"},
+#line 298 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"SYLT", FRAME(SYLT), DISCARD,  "Synchronised lyric/text"},
+#line 274 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"ASPI", FRAME(ASPI), DISCARD,  "Audio seek point index"},
-#line 318 "frametype.gperf"
-      {"TIT2", FRAME(text), PRESERVE, "Title/songname/content description"},
-#line 359 "frametype.gperf"
-      {"WXXX", FRAME(WXXX), PRESERVE, "User defined URL link frame"},
-#line 288 "frametype.gperf"
-      {"MCDI", FRAME(MCDI), PRESERVE, "Music CD identifier"},
-#line 316 "frametype.gperf"
+#line 314 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"TIPL", FRAME(text), PRESERVE, "Involved people list"},
-#line 347 "frametype.gperf"
-      {"TXXX", FRAME(TXXX), PRESERVE, "User defined text information frame"},
-#line 295 "frametype.gperf"
+#line 317 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TIT3", FRAME(text), PRESERVE, "Subtitle/description refinement"},
+#line 284 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"MCDI", FRAME(MCDI), PRESERVE, "Music CD identifier"},
+#line 282 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"GRP1", FRAME(text), PRESERVE, "Grouping"},
+#line 293 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
       {"RBUF", FRAME(RBUF), PRESERVE, "Recommended buffer size"},
-#line 317 "frametype.gperf"
-      {"TIT1", FRAME(text), PRESERVE, "Content group description"},
-#line 319 "frametype.gperf"
-      {"TIT3", FRAME(text), PRESERVE, "Subtitle/description refinement"}
+#line 278 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"EQU2", FRAME(EQU2), DISCARD,  "Equalisation (2)"},
+#line 357 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"WXXX", FRAME(WXXX), PRESERVE, "User defined URL link frame"},
+#line 345 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TXXX", FRAME(TXXX), PRESERVE, "User defined text information frame"},
+#line 316 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TIT2", FRAME(text), PRESERVE, "Title/songname/content description"},
+#line 315 "/home/bll/s/bdj4/packages/libid3tag-0.16.4/frametype.gperf"
+      {"TIT1", FRAME(text), PRESERVE, "Work name"}
     };
 
-  static const short lookup[] =
+  static const signed char lookup[] =
     {
       -1, -1, -1, -1, -1, -1, -1,  0, -1, -1, -1, -1, -1, -1,
       -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,  1, -1,
-       2,  3, -1,  4, -1, -1, -1, -1,  5,  6,  7,  8, -1,  9,
-      10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
-      24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
-      38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
-      52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65,
-      66, 67, 68, 69, -1, 70, 71, -1, 72, 73, 74, -1, 75, -1,
-      76, -1, -1, -1, 77, 78, -1, -1, 79, -1, -1, -1, -1, 80,
-      81, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-      -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 82, -1, -1,
-      -1, 83
+       2,  3, -1,  4, -1, -1, -1,  5,  6,  7,  8,  9, -1, 10,
+      11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+      25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38,
+      39, 40, 41, 42, 43, -1, 44, -1, 45, 46, 47, 48, 49, 50,
+      51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64,
+      65, 66, 67, 68, -1, 69, 70, 71, -1, 72, 73, -1, 74, -1,
+      -1, 75, -1, 76, -1, -1, -1, -1, 77, 78, 79, -1, 80, -1,
+      81, -1, -1, -1, -1, -1, -1, -1, -1, -1, 82, -1, -1, 83,
+      -1, -1, -1, -1, -1, -1, -1, -1, 84, -1, -1, 85, -1, -1,
+      -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+      -1, -1, -1, -1, -1, -1, -1, -1, -1, 86
     };
 
   if (len <= MAX_WORD_LENGTH && len >= MIN_WORD_LENGTH)
     {
-      register int key = hash (str, len);
+      register unsigned int key = hash (str, len);
 
-      if (key <= MAX_HASH_VALUE && key >= 0)
+      if (key <= MAX_HASH_VALUE)
         {
           register int index = lookup[key];
 

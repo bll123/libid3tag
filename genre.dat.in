@@ -16,7 +16,6 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * $Id: genre.dat.in,v 1.7 2004/01/23 09:41:32 rob Exp $
  */
 
 /*
@@ -67,7 +66,7 @@ Game
 Sound Clip
 Gospel
 Noise
-AlternRock
+Alt. Rock
 Bass
 Soul
 Punk
@@ -86,7 +85,7 @@ Dream
 Southern Rock
 Comedy
 Cult
-Gangsta
+Gangsta Rap
 Top 40
 Christian Rap
 Pop/Funk
@@ -111,11 +110,11 @@ Hard Rock
 /* Winamp extensions (80-147) */
 
 Folk
-Folk/Rock
+Folk-Rock
 National Folk
 Swing
 Fast-Fusion
-Bebob
+Bebop
 Latin
 Revival
 Celtic
@@ -153,7 +152,7 @@ Freestyle
 Duet
 Punk Rock
 Drum Solo
-A Capella
+A Cappella
 Euro-House
 Dance Hall
 Goa
@@ -163,7 +162,7 @@ Hardcore
 Terror
 Indie
 BritPop
-Negerpunk
+Afro-Punk
 Polsk Punk
 Beat
 Christian Gangsta Rap
@@ -178,3 +177,47 @@ Thrash Metal
 Anime
 JPop
 Synthpop
+Abstract
+Art Rock
+Baroque
+Bhangra
+Big Beat
+Breakbeat
+Chillout
+Downtempo
+Dub
+EBM
+Eclectic
+Electro
+Electroclash
+Emo
+Experimental
+Garage
+Global
+IDM
+Illbient
+Industro-Goth
+Jam Band
+Krautrock
+Leftfield
+Lounge
+Math Rock
+New Romantic
+Nu-Breakz
+Post-Punk
+Post-Rock
+Psytrance
+Shoegaze
+Space Rock
+Trop Rock
+World Music
+Neoclassical
+Audiobook
+Audio Theatre
+Neue Deutsche Welle
+Podcast
+Indie Rock
+G-Funk
+Dubstep
+Garage Rock
+Psybient

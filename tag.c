@@ -16,15 +16,15 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * $Id: tag.c,v 1.20 2004/02/17 02:04:10 rob Exp $
  */
 
+# include "config.h"
 # include "global.h"
 
 # include <string.h>
 # include <stdlib.h>
 
-# ifdef HAVE_ASSERT_H
+# if HAVE_ASSERT_H
 #  include <assert.h>
 # endif
 
@@ -347,7 +347,7 @@ int v1_attachstr(struct id3_tag *tag, char const *id,
     goto fail;
 
   if (text)
-    id3_latin1_decode((id3_latin1_t const *) text, ucs4);
+    id3_latin1_decode(text, ucs4);
   else
     id3_ucs4_putnumber(ucs4, number);
 
@@ -784,8 +784,9 @@ id3_length_t id3_tag_render(struct id3_tag const *tag, id3_byte_t *buffer)
       break;
   }
 
-  if (i == tag->nframes)
-    return 0;
+  /* turn off this check, it's ok to have no tags */
+  // if (i == tag->nframes)
+  //  return 0;
 
   ptr = buffer ? &buffer : 0;
 

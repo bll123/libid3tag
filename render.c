@@ -16,15 +16,15 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * $Id: render.c,v 1.11 2004/01/23 09:41:32 rob Exp $
  */
 
+# include "config.h"
 # include "global.h"
 
 # include <string.h>
 # include <stdlib.h>
 
-# ifdef HAVE_ASSERT_H
+# if HAVE_ASSERT_H
 #  include <assert.h>
 # endif
 
@@ -112,7 +112,7 @@ id3_length_t id3_render_latin1(id3_byte_t **ptr,
   id3_length_t size;
 
   if (latin1 == 0)
-    latin1 = (id3_latin1_t const *) "";
+    latin1 = "";
 
   size = id3_latin1_size(latin1);
   if (!terminate)

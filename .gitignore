@@ -1,2 +1,4 @@
-build
-.vscode/
+syntax: regexp
+^build
+^config\.h$
+^id3tag\.h$
