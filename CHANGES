@@ -11,7 +11,7 @@ Version 0.16.4
   * Apply debian patch
   * Apply a couple patches from Audio::Scan 0.62
   * Update CMakeLists.txt to generate frametype.c, compat.c and genre.dat
-  * Update genre.dat.in with the full and corrected list of audio tags.
+  * Update genre.dat.in with the full and corrected list of genres
   * Remove RCS ID tags.
   * Remove extraneous files.
 
